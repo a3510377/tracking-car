@@ -13,7 +13,7 @@
 #define PWMA_ID 0
 #define PWMB_ID 1
 
-const uint8_t PINS[] = {A15, A16, A17, A18, A19};
+const uint8_t PINS[] = {A14, A15, A16, A17, A19};
 
 Motor motor1(AIN1, AIN2, STBY, PWMA);
 Motor motor2(BIN1, BIN2, STBY, PWMB);
@@ -65,4 +65,12 @@ void loop() {
     Serial.println(motor1.getSpeedDirection());
     Serial.println(motor2.getSpeedDirection());
   }
+
+  for (uint8_t i = 0; i < sizeof(PINS); i++) {
+    Serial.print(analogRead(PINS[i]));
+
+    if (i != sizeof(PINS) - 1) Serial.print(",");
+  }
+  delay(10);
+  Serial.println();
 }
