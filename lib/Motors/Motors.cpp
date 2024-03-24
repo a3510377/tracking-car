@@ -100,6 +100,27 @@ uint8_t Motors::getSpeedB() {
   return _motor2->getSpeed();
 }
 
+void Motors::setDefaultSpeed(uint8_t speed) {
+  _motor1->setDefaultSpeed(speed);
+  _motor2->setDefaultSpeed(speed);
+}
+void Motors::setDefaultSpeed(uint8_t speedA, uint8_t speedB) {
+  _motor1->setDefaultSpeed(speedA);
+  _motor2->setDefaultSpeed(speedB);
+}
+void Motors::setDefaultSpeedA(uint8_t speed) {
+  _motor1->setDefaultSpeed(speed);
+}
+void Motors::setDefaultSpeedB(uint8_t speed) {
+  _motor2->setDefaultSpeed(speed);
+}
+uint8_t Motors::getDefaultSpeedA() {
+  return _motor1->getDefaultSpeed();
+}
+uint8_t Motors::getDefaultSpeedB() {
+  return _motor2->getDefaultSpeed();
+}
+
 Motor *Motors::getMotorA() {
   return _motor1;
 }

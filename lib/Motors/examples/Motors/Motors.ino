@@ -22,7 +22,7 @@ void setup() {
   Serial.begin(9600);
 
   motors.setup();
-  motors.setSpeed(100);
+  motors.setDefaultSpeed(100);
 }
 
 void loop() {

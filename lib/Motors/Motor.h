@@ -28,7 +28,9 @@ class Motor {
   void move(int32_t speed_direction);
 
   void setSpeed(uint8_t speed);
+  void setDefaultSpeed(uint8_t speed);
   uint8_t getSpeed(void);
+  uint8_t getDefaultSpeed(void);
   int32_t getSpeedDirection(void);
 
   uint8_t getIn1Pin(void);
@@ -42,6 +44,6 @@ class Motor {
   void setStby(uint8_t stby);
 
  private:
-  uint8_t _in1, _in2, _stby, _pwm;
+  uint8_t _in1, _in2, _stby, _pwm, _default_speed = 255;
   int32_t _speed_direction;
 };

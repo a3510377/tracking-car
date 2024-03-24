@@ -12,19 +12,19 @@ void Motor::standby() {
 }
 
 void Motor::forward() {
-  if (!_speed_direction) setSpeed(255);
+  if (!_speed_direction) setSpeed(_default_speed);
   else if (_speed_direction < 0) _speed_direction = -_speed_direction;
 
   move(_speed_direction);
 }
 
 void Motor::forward(uint8_t speed) {
-  move(abs(speed));
+  move(speed);
 }
 
 void Motor::back() {
   if (!_speed_direction) {
-    setSpeed(255);
+    setSpeed(_default_speed);
     _speed_direction *= -1;
   } else if (_speed_direction > 0) _speed_direction = -_speed_direction;
 
@@ -32,7 +32,7 @@ void Motor::back() {
 }
 
 void Motor::back(uint8_t speed) {
-  move(-abs(speed));
+  move(-speed);
 }
 
 void Motor::stop() {
@@ -78,6 +78,13 @@ void Motor::setSpeed(uint8_t speed) {
   _speed_direction = _speed_direction >= 0 ? speed : -speed;
 
   analogWrite(_pwm, speed);
+}
+
+void Motor::setDefaultSpeed(uint8_t speed) {
+  _default_speed = speed;
+}
+uint8_t Motor::getDefaultSpeed() {
+  return _default_speed;
 }
 
 uint8_t Motor::getSpeed() {

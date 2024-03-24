@@ -40,6 +40,13 @@ class Motors {
   uint8_t getSpeedA();
   uint8_t getSpeedB();
 
+  void setDefaultSpeed(uint8_t speed);
+  void setDefaultSpeed(uint8_t speedA, uint8_t speedB);
+  void setDefaultSpeedA(uint8_t speed);
+  void setDefaultSpeedB(uint8_t speed);
+  uint8_t getDefaultSpeedA(void);
+  uint8_t getDefaultSpeedB(void);
+
   Motor *getMotorA();
   Motor *getMotorB();
 
