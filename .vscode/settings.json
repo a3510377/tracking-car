@@ -18,6 +18,12 @@
     "iosfwd": "cpp",
     "istream": "cpp",
     "streambuf": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "random": "cpp",
+    "limits": "cpp",
+    "ostream": "cpp",
+    "sstream": "cpp",
+    "string": "cpp",
+    "string_view": "cpp"
   }
 }
